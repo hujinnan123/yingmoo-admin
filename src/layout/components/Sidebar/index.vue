@@ -47,6 +47,7 @@ export default {
   created() {
     menus().then(data => {
       this.menus = data.data
+      console.log(this.menus)
     })
   }
 }
@@ -58,6 +59,6 @@ export default {
   background: #ccc;
   text-align: center;
   line-height: 50px;
-  border-right: solid 1px #e6e6e6
+  border-right: solid 1px #e6e6e6;
 }
 </style>

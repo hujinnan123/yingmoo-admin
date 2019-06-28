@@ -35,6 +35,9 @@ export default {
 </script>
 
 <style lang="scss">
+@function rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
 .app-wrapper {
   position: relative;
   width: 100%;
@@ -54,9 +57,9 @@ export default {
   .sidebar-container{
     position: fixed;
     z-index: 10;
-    width: 60%;
+    width: rem(400px);
     height: 100%;
-    background-color: #304156;
+    background-color: rgb(84, 92, 100);
     overflow-y: auto;
   }
 

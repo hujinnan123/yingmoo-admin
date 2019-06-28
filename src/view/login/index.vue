@@ -12,6 +12,7 @@
       </div>
 
       <el-form-item prop="username">
+        <input type="text" name="username" autocomplete="off" style="display:none">
         <span class="login-icon active">
           <svg-icon icon-class="user" />
         </span>
@@ -100,13 +101,16 @@ export default {
     this.vCodeUrl = '/vcode?t=' + new Date().getTime()
   },
   mounted() {
-    if (this.loginForm.username === '') {
-      this.$refs.username.focus()
-    } else if (this.loginForm.password === '') {
-      this.$refs.password.focus()
-    }else if(this.loginForm.vcode === '') {
-      this.$refs.vcode.focus()
-    }
+    setTimeout(()=>{
+      if (this.loginForm.username === '') {
+        this.$refs.username.focus()
+      } else if (this.loginForm.password === '') {
+        this.$refs.password.focus()
+      }else if(this.loginForm.vcode === '') {
+        this.$refs.vcode.focus()
+      }
+    },1000)
+    
   },
   methods: {
     showPwd() {
@@ -160,6 +164,7 @@ export default {
   height: 100%;
   text-align: center;
   background-image: url("../../../static/login/landscape.jpg");
+  background-size: 100% 100%;
 
   .login-form {
     width: rem(600px);
